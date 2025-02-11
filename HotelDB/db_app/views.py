@@ -38,16 +38,20 @@ def view_table(request, table_name):
         # Получаем названия колонок (первый элемент из cursor.description)
         column_names = [desc[0] for desc in cursor.description]
 
-    # Пагинация: 5 записей на страницу
-    paginator = Paginator(rows, 5)
-    page_number = request.GET.get('page')
+    # Пагинация: 6 записей на страницу
+    paginator = Paginator(rows, 6)
+    page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'db_app/view_table.html', {
-        'table_name': table_name,
-        'columns': column_names,  # Передаем названия колонок в шаблон
-        'page_obj': page_obj,  # Объект пагинации
-    })
+    return render(
+        request,
+        "db_app/view_table.html",
+        {
+            "table_name": table_name,
+            "columns": column_names,  # Передаем названия колонок в шаблон
+            "page_obj": page_obj,  # Объект пагинации
+        },
+    )
 
 
 def get_model_by_name(table_name):
@@ -168,4 +172,3 @@ def view_bookings(request):
         'bookings': page_obj
     }
     return render(request, 'db_app/bookings.html', context)
-

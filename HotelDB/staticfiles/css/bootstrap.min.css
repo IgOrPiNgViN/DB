@@ -4161,7 +4161,7 @@ fieldset:disabled .btn {
 
 .dropdown-item.active,
 .dropdown-item:active {
-    color: #e9c5c5;
+    color: #fff;
     text-decoration: none;
     background-color: #0d6efd
 }
@@ -4182,7 +4182,7 @@ fieldset:disabled .btn {
     padding: .5rem 1rem;
     margin-bottom: 0;
     font-size: .875rem;
-    color: #651f5b;
+    color: #6c757d;
     white-space: nowrap
 }
 
